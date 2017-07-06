@@ -1,0 +1,8 @@
+{
+    "messages":{
+        "welcome":"This is a configuration generator built with Python"
+    },
+    "errors":{
+        "empty_input":"You have entered an empty input"
+    }
+}
