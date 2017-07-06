@@ -1,8 +1,18 @@
 {
     "messages":{
-        "welcome":"This is a configuration generator built with Python"
+        "welcome":"This is a configuration generator built with Python",
+        "about":"Information about Configuration Generator",
+        "run":"Run the generator",
+        "github":"Get the GitHub url for this project"
     },
     "errors":{
         "empty_input":"You have entered an empty input"
+    },
+    "content":{
+        "about":"Configuration Generator helps you create configuration files necessary for your project. Visit the github repository for details",
+        "github":"Visit http://github.com/andresito/config-generator for details",
+        "run":{
+            "welcome_message":"WELCOME TO CONFIGURATION GENERATOR!\n\n This will ask you for various options you can apply to your project.\n\n"
+        }
     }
 }
