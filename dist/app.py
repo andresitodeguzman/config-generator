@@ -1,12 +1,14 @@
-#
-#   Configuration Generator
-#   Andresito M. de Guzman
-#   2017
-#
+##
+##   Configuration Generator
+##   Andresito M. de Guzman
+##   2017
+##
+##
 
 import os
 import json
 import argparse
+import pprint
 
 app_config = "config.json"
 error_general = "An Error Occured"
@@ -15,13 +17,37 @@ def run():
     run = content['run']
     print(run['welcome_message'])
     project_title = input("What is the Project Title?(template_project) ")
+    version = input("Version:(1.0.0) ")
+    description = input("Description: ")
+    author = input("Who is the Author?(user) ")
+    license = input("License: ")
+    copyright = input("Copyright: ")
+    repository = input("Git Repository: ")
+    keywords = input("Keywords: ")
     if project_title=='':
         project_title='template_project'
-    author = input("Who is the Author?(user) ")
     if author=='':
         author='user'
-    print(project_title)
-    print(author)
+    if version =='':
+        version="1.0.0"
+    
+    create = {"project_title":project_title, "version":version, "description":description, "author":author, "license":license, "copyright":copyright, "repository":repository, "keywords":keywords}
+    print("\n")
+    pp = pprint.PrettyPrinter()
+    pp.pprint(create)
+
+    confirm = input("\n\nIs this okay? (y/n)")
+    if confirm == "y":
+        
+        createJSON = json.JSONEncoder().encode(create)
+        with open("configuration.json","w") as file:
+            file.write(createJSON)
+
+        print("Configuration file saved as configuration.json")
+
+    else:
+        print("aborted")
+
 
 # configureLoader() loads the configuration file for the program's internal process
 def configureLoader():
